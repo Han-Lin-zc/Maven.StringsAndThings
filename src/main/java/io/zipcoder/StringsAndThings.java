@@ -49,8 +49,8 @@ public class StringsAndThings {
      */
     public Boolean containsEqualNumberOfIsAndNot(String input) {
         int num = 0;
-
         for (int i=0; i < input.length() - 1; i++) {
+
             if (input.charAt(i) == 'i' && input.charAt(i+1) == 's')  {
                 num++;
 
@@ -69,17 +69,18 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input) {
-        String[] s = input.split(" ");
-        for (String i: s) {
-            if (i.equals("g") && (i+1).equals("g")) {
-                return true;
-//            } else if (i.equals("g") && (i-1).equals("g")) {
-//                return true;
+        int num = 0;
+        for (int i = 0; i < input.length(); i++) {
+
+            if (input.charAt(i) == 'g' && input.charAt(i-1) == 'g') {
+                num++;
+
+            } else if (input.charAt(i) == 'g' && input.charAt(i+1) == 'g') {
+                num++;
             }
         }
-        return false;
+        return num % 2 == 0;
     }
-
 
     /**
      * We'll say that a "triple" in a string is a char appearing three times in a row.
