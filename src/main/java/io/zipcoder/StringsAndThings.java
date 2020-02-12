@@ -72,11 +72,14 @@ public class StringsAndThings {
         int num = 0;
         for (int i = 0; i < input.length(); i++) {
 
-            if (input.charAt(i) == 'g' && input.charAt(i-1) == 'g') {
-                num++;
-
-            } else if (input.charAt(i) == 'g' && input.charAt(i+1) == 'g') {
-                num++;
+            if (input.charAt(i) == 'g') {
+                if (input.charAt(i + 1) == 'g') {
+                    num++;
+                } else if (input.charAt(i - 1) == 'g') {
+                    num++;
+                } else {
+                    return false;
+                }
             }
         }
         return num % 2 == 0;
@@ -90,6 +93,31 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int num = 0;
+
+        for (int i = 0; i < input.length() - 2; i++) {
+            if (input.charAt(i) == input.charAt(i+1) && input.charAt(i+1) == input.charAt(i+2)) {
+                num++;
+            }
+        }
+        return num;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
