@@ -49,9 +49,11 @@ public class StringsAndThings {
      */
     public Boolean containsEqualNumberOfIsAndNot(String input) {
         int num = 0;
-        for (int i=0; i < input.length(); i++) {
-            if (input.charAt(i) == 'i' && input.charAt(i+1) == 's') {
+
+        for (int i=0; i < input.length() - 1; i++) {
+            if (input.charAt(i) == 'i' && input.charAt(i+1) == 's')  {
                 num++;
+
             } else if (input.charAt(i) == 'n' && input.charAt(i+1) == 'o' && input.charAt(i+2) =='t') {
                 num++;
             }
