@@ -15,7 +15,14 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        int result = 0;
+        String[] s = input.split(" ");
+        for (String i: s) {
+            if (i.charAt(i.length() - 1) == 'y' || (i.charAt(i.length() - 1) == 'z')) {
+                result++;
+            }
+        }
+        return result;
     }
 
     /**
@@ -27,8 +34,9 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
-    public String removeString(String base, String remove){
-        return null;
+    public String removeString(String base, String remove) {
+        String result = base.replaceAll(remove, "");
+        return result;
     }
 
     /**
@@ -39,8 +47,21 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
-    public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+    public Boolean containsEqualNumberOfIsAndNot(String input) {
+        int num = 0;
+        char[] s = input.toCharArray();
+        for (char i:s) {
+            if (i == ('i') && (i+1) == ('s')) {
+                num++;
+            } else if (i == ('n') && (i+1) == ('o') && (i+2) == ('t')) {
+                num++;
+            }
+        }
+        if (num % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -50,8 +71,16 @@ public class StringsAndThings {
      *           gHappy("xxgxx") // Should return  false
      *           gHappy("xxggyygxx") // Should return  false
      */
-    public Boolean gIsHappy(String input){
-        return null;
+    public Boolean gIsHappy(String input) {
+        String[] s = input.split(" ");
+        for (String i: s) {
+            if (i.equals("g") && (i+1).equals("g")) {
+                return true;
+//            } else if (i.equals("g") && (i-1).equals("g")) {
+//                return true;
+            }
+        }
+        return false;
     }
 
 
